@@ -17,4 +17,5 @@ poetry install
 pre-commit install
 pre-commit run --all-files
 poetry run pytest -q
-Push and check the Actions tab (should be green).
+```
+4.Push and check the Actions tab (should be green).

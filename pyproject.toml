@@ -1,0 +1,32 @@
+[tool.poetry]
+name = "project-template"
+version = "0.1.0"
+description = "Template for DS/ML repos with Poetry, pre-commit, CI, and src/ layout"
+authors = ["Rahul Gowda <rahulgowda20799@gmail.com>"]
+readme = "README.md"
+
+# generic package: project_slug; users will rename after using the template
+packages = [{ include = "project_slug", from = "src" }]
+
+[tool.poetry.dependencies]
+python = ">=3.11,<3.13"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.4.2"
+black = "^25.9.0"
+ruff = "^0.13.2"
+pre-commit = "^4.3.0"
+
+[tool.black]
+line-length = 100
+target-version = ["py311"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+lint.select = ["E","F","I","UP","B","W"]
+lint.ignore = ["E203","E501"]
+
+[build-system]
+requires = ["poetry-core>=1.9.0"]
+build-backend = "poetry.core.masonry.api"
